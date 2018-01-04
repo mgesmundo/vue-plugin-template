@@ -1,25 +1,13 @@
 {
   "presets": [
-    [
-      "env",
-    {
-      "targets": {
-        "browsers": [
-          "last 2 versions"
-        ]
-      }
-    }
-    ]
+    ["es2015", { "modules": false }]
   ],
   "plugins": [
-    "transform-vue-jsx",
-    "transform-object-rest-spread"
+    "external-helpers"
   ],
   "env": {
     "test": {
-      "plugins": [
-        "istanbul"
-      ]
+      "presets": ["power-assert"]
     }
   }
 }

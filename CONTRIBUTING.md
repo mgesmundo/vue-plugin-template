@@ -3,7 +3,7 @@
 Contributions are **welcome** and will be fully **credited**.
 
 We accept contributions via Pull Requests
-on [Github](https://github.com/posv/vue-plugin-template).
+on [Github](https://github.com/mgesmundo/vue-plugin-template).
 
 
 ## Pull Requests

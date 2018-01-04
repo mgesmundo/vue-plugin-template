@@ -38,16 +38,16 @@ Vue.use({{ library }})
 
 ## Development
 
-### Launch visual tests
+### Launch dev environment
 
 ```bash
 npm run dev
 ```
 
-### Launch Karma with coverage
+### Launch test
 
 ```bash
-npm run dev:coverage
+npm run test
 ```
 
 ### Build
@@ -57,7 +57,6 @@ Bundle the js and css of to the `dist` folder:
 ```bash
 npm run build
 ```
-
 
 ## Publishing
 
