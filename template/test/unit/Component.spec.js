@@ -1,5 +1,3 @@
-'use strict'
-
 import assert from 'power-assert'
 import Vue from 'vue'
 import Component from '../../src/Component'

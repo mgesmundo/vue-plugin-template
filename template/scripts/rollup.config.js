@@ -1,5 +1,3 @@
-'use strict'
-
 const babel = require('rollup-plugin-babel')
 const vue = require('rollup-plugin-vue')
 const replace = require('rollup-plugin-replace')

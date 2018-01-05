@@ -1,5 +1,3 @@
-'use strict'
-
 import { play } from 'vue-play'
 import Component from '../src/Component.vue'
 

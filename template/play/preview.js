@@ -1,5 +1,3 @@
-'use strict'
-
 import preview from 'vue-play/preview'
 import './' // which is ./play/index.js
 
