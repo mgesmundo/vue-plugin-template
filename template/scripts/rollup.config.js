@@ -7,10 +7,18 @@ const sass = require('rollup-plugin-sass')
 const autoprefixer = require('autoprefixer')
 const postcss = require('postcss')
 const meta = require('../package.json')
+const resolve = require('rollup-plugin-node-resolve')
+const commonjs = require('rollup-plugin-commonjs')
 
 const config = {
   input: 'src/index.js',
   plugins: [
+    resolve({
+      browser: true
+    }),
+    commonjs({
+      sourceMap: false
+    }),
     sass({
       output: process.env.BUILD === 'prod' ? `dist/${meta.name}.css` : false,
       processor: css => postcss([ autoprefixer ])
