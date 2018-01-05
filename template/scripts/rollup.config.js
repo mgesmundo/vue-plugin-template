@@ -3,13 +3,26 @@ const vue = require('rollup-plugin-vue')
 const replace = require('rollup-plugin-replace')
 const uglify = require('rollup-plugin-uglify')
 const minify = require('uglify-es').minify
+const sass = require('rollup-plugin-sass')
+const autoprefixer = require('autoprefixer')
+const postcss = require('postcss')
 const meta = require('../package.json')
 
 const config = {
   input: 'src/index.js',
   plugins: [
+    sass({
+      output: process.env.BUILD === 'prod' ? `dist/${meta.name}.css` : false,
+      processor: css => postcss([ autoprefixer ])
+        .process(css, { from: undefined })
+        .then(result => result.css)
+    }),
     vue({
-      css: process.env.BUILD === 'cjs' ? `dist/${meta.name}.css` : false
+      css: process.env.BUILD === 'prod' ? `dist/${meta.name}.vue.css` : false,
+      postcss: {
+        plugins: [ autoprefixer() ],
+        options: { from: undefined }
+      }
     })
   ],
   output: {
