@@ -41,7 +41,7 @@ Vue.use({{ library }})
 ### Launch dev environment
 
 ```bash
-npm run dev
+npm run storybook
 ```
 
 ### Launch test

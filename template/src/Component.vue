@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    name: 'Test',
+    name: 'MyComponent',
 
     props: {
       value: {
@@ -27,7 +27,7 @@
 
     data () {
       return {
-        msg: 'Welcome to Your Vue.js Component'
+        msg: 'Welcome to Your Vue.js component'
       }
     },
 

@@ -33,7 +33,7 @@ Use the future features of Javascript.
 
 ### Advanced testing
 Get the best developer experience by testing the components at the same
-time you **interact** with them using [vue-play](https://github.com/vue-play/vue-play).
+time you **interact** with them using [storybook](https://storybook.js.org/basics/guide-vue/).
 
 ### Development-only features
 Add warnings to improve the DX of your plugin that are removed when bundling in
