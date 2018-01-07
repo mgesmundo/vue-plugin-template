@@ -12,6 +12,7 @@ const commonjs = require('rollup-plugin-commonjs')
 
 const config = {
   input: 'src/index.js',
+  external: [ 'vue' ],
   plugins: [
     resolve({
       browser: true
@@ -35,6 +36,9 @@ const config = {
   ],
   output: {
     name: 'Lib',
+    globals: {
+      vue: 'Vue'
+    },
     banner: `/*!
  * ${meta.name} v${meta.version}
  * ${meta.description}
