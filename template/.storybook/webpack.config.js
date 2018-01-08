@@ -8,18 +8,16 @@ module.exports = (baseConfig, env) => {
 
   // Extend configuration
   config.module.rules.push({
-    test: /\.scss$/,
-    loaders: ['style-loader', 'css-loader', 'sass-loader'],
-    include: globalPath
-  })
-  config.module.rules.push({
-    test: /\.sass$/,
-    use: {
-      loader: 'sass-loader',
-      options: {
-        indentedSyntax: true
+    test: /\.(scss|sass)$/,
+    use: [
+      { loader: 'style-loader' },
+      { loader: 'css-loader' }, {
+        loader: 'sass-loader',
+        options: {
+          indentedSyntax: true
+        }
       }
-    },
+    ],
     include: globalPath
   })
   config.module.rules.push({
