@@ -61,14 +61,20 @@ switch (process.env.BUILD) {
     config.output.format = 'cjs'
     config.output.file = `dist/${meta.name}.cjs.js`
     config.plugins.push(
-      babel({ exclude: 'node_modules/**' })
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['external-helpers']
+      })
     )
     break
   case 'prod':
     config.output.format = 'umd'
     config.output.file = `dist/${meta.name}.min.js`
     config.plugins.push(
-      babel({ exclude: 'node_modules/**' })
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['external-helpers']
+      })
     )
     config.plugins.push(
       replace({ 'process.env.NODE_ENV': JSON.stringify('production') })
@@ -93,7 +99,10 @@ switch (process.env.BUILD) {
     config.output.format = 'umd'
     config.output.file = `dist/${meta.name}.js`
     config.plugins.push(
-      babel({ exclude: 'node_modules/**' })
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['external-helpers']
+      })
     )
     config.plugins.push(
       replace({ 'process.env.NODE_ENV': JSON.stringify('development') })
