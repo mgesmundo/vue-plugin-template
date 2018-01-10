@@ -1,7 +1,10 @@
 const path = require('path');
 // load the default config generator.
 const genDefaultConfig = require('@storybook/vue/dist/server/config/defaults/webpack.config.js')
-const globalPath = path.resolve(__dirname, '../')
+const globalPaths = [
+  path.resolve(__dirname, '../src'),
+  path.resolve(__dirname, '../static')
+]
 
 module.exports = (baseConfig, env) => {
   const config = genDefaultConfig(baseConfig, env);
@@ -18,27 +21,28 @@ module.exports = (baseConfig, env) => {
         }
       }
     ],
-    include: globalPath
+    include: globalPaths
   })
   config.module.rules.push({
     test: /\.less$/,
     use: {
       loader: 'less-loader'
     },
-    include: globalPath
+    include: globalPaths
   })
   config.module.rules.push({
     test: /\.styl$/,
     use: {
       loader: 'stylus-loader'
     },
-    include: globalPath
+    include: globalPaths
   })
-  config.module.rules.push({  test: /\.css$/,
+  config.module.rules.push({
+    test: /\.css$/,
     use: {
       loader: 'style-loader!css-loader'
     },
-    include: globalPath
+    include: globalPaths
   })
   config.module.rules.push({
     test: /\.(woff|woff2)$/,
@@ -50,7 +54,7 @@ module.exports = (baseConfig, env) => {
         mimetype: 'application/font-woff'
       }
     },
-    include: globalPath
+    include: globalPaths
   })
   config.module.rules.push({
     test: /\.(ttf|eot|svg|png)$/,
@@ -60,7 +64,7 @@ module.exports = (baseConfig, env) => {
           name: 'fonts/[hash].[ext]'
         }
     },
-    include: globalPath
+    include: globalPaths
   })
 
   return config

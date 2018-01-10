@@ -65,6 +65,7 @@
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-plugin-vue": "^3.0.0",
     "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
     "stylus-loader": "^3.0.1",
     "testem": "^1.18.4",
     "uglify-es": "^3.3.4",
