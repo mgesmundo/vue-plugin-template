@@ -49,6 +49,10 @@ const config = {
  * Released under the ${meta.license} license
  * ${meta.homepage ? meta.homepage + '/blob/master/LICENSE' : ''}
  */`
+  },
+  onwarn: function (message) {
+    // https://github.com/rollup/rollup/issues/408
+    // disable some unwanted warnig
   }
 }
 
