@@ -13,7 +13,7 @@ vue init mgesmundo/vue-plugin-template my-awesome-plugin
 # Answer some questions
 cd my-awesome-plugin
 npm install
-npm run dev
+npm run storybook
 # 🎉
 ```
 
